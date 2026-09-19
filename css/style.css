@@ -1,0 +1,114 @@
+/* ==========================================================================
+   CSS CUSTOM VARIABLES (MODERN SYSTEM)
+   ========================================================================== */
+/* Memaksa kata yang terlalu panjang untuk turun ke baris baru */
+body {
+  overflow-x: hidden; /* Mencegah layar bisa digeser ke kanan-kiri (horizontal scroll) */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+   :root {
+  /* Palet Warna Premium */
+  --color-primary: #12291C; /* Deep Forest Green (Lebih gelap & eksklusif) */
+  --color-primary-light: #1E422D;
+  --color-secondary: #D4AF37; 
+  --color-secondary-hover: #C5A030;
+  
+  /* Gradasi Mewah */
+  --gradient-gold: linear-gradient(135deg, #E8C872 0%, #D4AF37 100%);
+  --gradient-dark: radial-gradient(circle at top right, var(--color-primary-light) 0%, var(--color-primary) 100%);
+
+  /* Warna Dasar */
+  --color-bg: #FCFCF9; /* Off-white, nuansa kertas premium */
+  --color-bg-alt: #FFFFFF;
+  --color-text: #2D3748;
+  --color-text-light: #718096;
+  --color-border: #EDF2F7;
+
+  /* Tipografi */
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'Manrope', sans-serif;
+
+  /* Spasi & Ukuran */
+  --container-width: 1140px;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 5rem; /* Spasi antar section diperbesar agar lebih "lega" */
+
+  /* Radius Modern (Lebih membulat) */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 50px;
+
+  /* Soft Shadows (Lebih halus dan menyebar) */
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+  --shadow-gold: 0 10px 20px -5px rgba(212, 175, 55, 0.4);
+
+  /* Transisi Halus */
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   RESET & TIPOGRAFI
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-primary);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+  letter-spacing: -0.02em; /* Teks judul sedikit dirapatkan (modern tipografi) */
+}
+
+p { margin-bottom: var(--spacing-md); }
+a { text-decoration: none; color: inherit; transition: color var(--transition); }
+ul, ol { list-style: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+.skip-link {
+  position: absolute; top: -40px; left: 0;
+  background: var(--color-secondary); color: white;
+  padding: 8px; z-index: 1000; transition: top var(--transition);
+}
+.skip-link:focus { top: 0; }
+
+.container {
+  width: 90%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+/* Layout Section Global */
+.section { padding: var(--spacing-xl) 0; }
+.section:nth-child(even) { background-color: var(--color-bg-alt); }
+
+.section__header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto var(--spacing-xl);
+}
+.section__title { font-size: 2.5rem; }
+.section__desc { color: var(--color-text-light); font-size: 1.1rem; }
